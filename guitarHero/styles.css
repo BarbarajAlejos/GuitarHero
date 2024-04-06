@@ -150,15 +150,23 @@ body {
   justify-content: center; /* Alinea los elementos horizontalmente */
 }
 
-#puntuacion, #vidas {
+#textos{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+p {
   color: #FFFFFF; /* Elige el color que desees para el texto */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
   background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para resaltar el texto */
-  margin: 0 15px; /* Espacio horizontal entre puntuación y vidas */
+  margin: 0 25px; /* Espacio horizontal entre puntuación y vidas */
   padding: 5px 10px; /* Espacio interno alrededor del texto */
   border-radius: 10px; /* Bordes redondeados */
-}
-
+  right: 10px; 
+  position: absolute;
+  top: 10px;
+  display: block; /* Asegura que los elementos <p> se muestren uno debajo del otro */
+ }
 #inicioJuego {
   position: absolute;
   top: 10px;
@@ -167,4 +175,15 @@ body {
   position: absolute;
   top: 10px; 
   right: 10px; 
+}
+.vidas{
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  margin-right: 400px;
+}
+.puntuacion{
+  position: relative;
+  margin-right: 328px;
+  margin-top: 10px;
 }
