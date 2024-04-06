@@ -1,0 +1,179 @@
+/* estilos.css */
+#jugador {
+    display: flex; /* Usa flexbox para alinear los círculos */
+    justify-content: center; /* Centra los círculos horizontalmente */
+    align-items: center; /* Centra los círculos verticalmente si es necesario */
+    flex-wrap: wrap; /* Permite que los círculos se ajusten según el espacio disponible */
+    width: 100%; /* Ocupar todo el ancho del contenedor de juego */
+    margin-top: auto; /* Esto empujará #jugador hacia la parte inferior de #juego */
+     /
+}
+  #juego {
+    width: 600px; /* Ajusta esto según las necesidades de tu diseño */
+    height: 600px; /* Mantén el ancho y alto iguales para un cuadrado */
+    margin: auto; /* Centrar el cuadrado en la página */
+    position: relative; /* Importante para el posicionamiento absoluto de los hijos */
+    background-color: #f0f0f0; /* O cualquier color que desees para el fondo */
+    border: 3px solid #000; /* Un borde para definir claramente el área del juego */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Asegúrate de que nada se desborde fuera del área de juego */
+    background-image: url('3d.png'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Aju
+   
+    justify-content: space-between; /* Esto separará el contenido superior e inferior */
+    padding: 20px; }
+
+
+
+  
+.circulo {
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Agrega los estilos específicos para cada color de botón */
+  .verde {
+    background: radial-gradient(circle at center, #00ff00 40%, #009900 100%);
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+  
+  .rojo {
+    background: radial-gradient(circle at center, #ff0000 40%, #990000 100%);
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+  }
+  
+  .amarillo {
+    background: radial-gradient(circle at center, #ffff00 40%, #999900 100%);
+    box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00;
+  }
+  
+  .azul {
+    background: radial-gradient(circle at center, #0000ff 40%, #000099 100%);
+    box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff;
+  }
+  .purpura{
+    background: radial-gradient(circle at center, #800080 40%, #4b0082 100%);
+    box-shadow: 0 0 10px #800080, 0 0 20px #800080, 0 0 30px #800080;
+  }
+  
+  
+  /* Crear un pseudo-elemento para simular la luz de fondo */
+  .circulo::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0.7;
+  }
+  
+  /* Simula el reflejo */
+  .circulo::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+    border-radius: inherit;
+    z-index: 2;
+  }
+  #opcion {
+    width: 30px;
+    height: 30px;
+    background-color: #e74c3c; /* Rojo */
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+  }
+  .elemento {
+    width: 50px;
+    height: 50px;
+    background-color: #e74c3c;
+    position: absolute;
+    border: 2px solid #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-image: url('nota1.png');
+    background-size: contain; /* O el tamaño específico que se vea mejor */
+    background-position: center;
+    background-repeat: no-repeat; /* Para asegurarte de que la imagen no se repita */
+    border-radius: 50%;
+}
+body {
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el relleno predeterminado */
+  background-image: url('escenario.png'); /* Asegúrate de que la ruta sea correcta */
+  background-size: cover; /* Esto hará que la imagen de fondo cubra todo el espacio disponible */
+  background-position: center; /* Centra la imagen de fondo en la página */
+  background-attachment: fixed; /* La imagen de fondo será fija al hacer scroll */
+}
+
+/* O, si tienes un contenedor que envuelve todo tu juego */
+#contenedor-del-juego {
+  position: relative; /* Esto es necesario si tienes elementos posicionados absolutamente dentro */
+  z-index: 1; /* Esto asegura que el contenedor esté sobre el fondo */
+  /* Tus otros estilos... */
+}
+
+/* Para el fondo detrás del juego específicamente */
+#fondo-detras-del-juego {
+  position: fixed; /* O absolute, dependiendo de cómo quieres que interactúe con el scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0; /* Esto coloca el fondo detrás de todo */
+  background-image: url('escenario.png'); /* Asegúrate de que la ruta sea correcta */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+#ui-container {
+  position: absolute;
+  top: 10px; /* Ajusta según necesidad para mover hacia arriba o abajo */
+  left: 50%; /* Centra el contenedor en la pantalla */
+  transform: translateX(-50%); /* Asegura que el centrado sea preciso */
+  z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
+  display: flex; /* Usa flexbox para la disposición de los elementos */
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Alinea los elementos horizontalmente */
+}
+
+#puntuacion, #vidas {
+  color: #FFFFFF; /* Elige el color que desees para el texto */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para resaltar el texto */
+  margin: 0 15px; /* Espacio horizontal entre puntuación y vidas */
+  padding: 5px 10px; /* Espacio interno alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Botones con estilo propio para que no sean afectados por los cambios */
+#inicioJuego {
+  position: absolute;
+  top: 10px; /* Ajusta esta propiedad para mover arriba o abajo según sea necesario */
+  /* Usa left o right para posicionar los botones en el lado deseado */
+  left: 10px; /* Posiciona a la izquierda */
+  /* right: 10px; */ /* Descomenta esta línea y comenta la anterior para posicionar a la derecha */
+}
+#pausaJuego {
+  position: absolute;
+  top: 10px; /* Ajusta esta propiedad para mover arriba o abajo según sea necesario */
+  /* Usa left o right para posicionar los botones en el lado deseado */
+  right: 10px; /* Posiciona a la izquierda */
+  /* right: 10px; */ /* Descomenta esta línea y comenta la anterior para posicionar a la derecha */
+}
