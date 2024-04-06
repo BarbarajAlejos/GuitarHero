@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JuegoGuitarHero</title>
+    <link rel="stylesheet" href="styles.css">
+    <audio id="ShawnM" src="ShawnM.mp3""></audio>
+    <audio id="error" src="error.mp3"></audio>
+</head>
+<body>
+    <div id="juego">
+        <!-- Botones de control y puntuación -->
+        <div id="controlesJuego">
+            <button id="inicioJuego">Iniciar Juego</button>
+            <button id="pausaJuego" disabled>Pausa</button>
+           
+        </div>
+       
+        <div class="puntuacion"><p>Puntuación: <span id="puntuacion">0</span></p></div>
+        <div class="vidas"><p>Vidas: <span id="vidas">3</span></p></div>   
+         
+        
+
+        <!-- Jugador y sus controles -->
+        <div id="jugador">
+            <div class="circulo verde" data-tecla="A"></div>
+            <div class="circulo rojo" data-tecla="B"></div>
+            <div class="circulo amarillo" data-tecla="C"></div>
+            <div class="circulo azul" data-tecla="E"></div>
+            <div class="circulo purpura" data-tecla="D"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
