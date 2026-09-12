@@ -42,3 +42,28 @@ GuitarHero/
 │   └── error.mp3
 │
 └── GuitarHero.pdf
+
+
+# Conceptos aplicados
+
+Durante el desarrollo se trabajaron conceptos como:
+
+Manipulación del DOM.
+Manejo de eventos en JavaScript.
+Lógica condicional.
+Gestión de estados del juego.
+Actualización dinámica de la interfaz.
+Uso de recursos multimedia.
+Diseño y estructuración de una aplicación web.
+
+# Resultados
+
+El proyecto culminó en una aplicación web interactiva capaz de ejecutar una partida musical, 
+gestionar la interacción del usuario y mostrar diferentes estados del juego.
+
+Se realizaron pruebas de funcionamiento en navegadores para verificar el comportamiento de la aplicación.
+
+# Documentación
+
+El archivo GuitarHero.pdf contiene la documentación académica del proyecto,
+incluyendo la descripción del desarrollo, resultados y evidencias de funcionamiento.
